@@ -13,6 +13,6 @@ public:
 	Character(int learn);
 	Character();
 	~Character();
-	void read();
-	void display();
+	Character read();
+	void display(Character character);
 };
