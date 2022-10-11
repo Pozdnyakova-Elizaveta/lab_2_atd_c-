@@ -26,5 +26,5 @@ Character Character::read() {
 void Character::display(Character character) {
 	if (character.friendly) cout << "Дружелюбная" << endl;
 	else cout << "Агрессивная" << endl;
-	cout << "Уровень обучаемости - " << dog.character.learn << endl;
+	cout << "Уровень обучаемости - " << character.learn << endl;
 }
