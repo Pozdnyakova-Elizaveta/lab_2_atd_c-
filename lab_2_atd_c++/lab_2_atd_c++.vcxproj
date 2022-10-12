@@ -92,6 +92,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -139,7 +141,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="character.cpp" />
+    <ClCompile Include="command_know.cpp" />
+    <ClCompile Include="dog.cpp" />
+    <ClCompile Include="inf.cpp" />
     <ClCompile Include="lab_2_atd_c++.cpp" />
+    <ClCompile Include="look.cpp" />
+    <ClCompile Include="needs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="character.h" />
+    <ClInclude Include="command_know.h" />
+    <ClInclude Include="dog.h" />
+    <ClInclude Include="inf.h" />
+    <ClInclude Include="look.h" />
+    <ClInclude Include="needs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

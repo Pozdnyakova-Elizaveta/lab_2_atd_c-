@@ -4,10 +4,9 @@
 #include <string.h>
 using namespace std;
 class Needs {
-private:
+public:
 	bool eat;
 	bool walk;
-public:
 	Needs(bool eat, bool walk);
 	Needs(bool eat);
 	Needs();

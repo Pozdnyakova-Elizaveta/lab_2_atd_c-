@@ -4,11 +4,10 @@
 #include <string.h>
 using namespace std;
 class Inf {
-private:
+public:
 	string name;
 	int age;
 	string breed;
-public:
 	Inf(string name, int age, string breed);
 	Inf(string name);
 	Inf();

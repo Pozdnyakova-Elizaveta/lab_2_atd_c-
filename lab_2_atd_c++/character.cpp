@@ -1,4 +1,4 @@
-#include "Character.h"
+#include "character.h"
 #include <iostream>
 #include <string.h>
 using namespace std;

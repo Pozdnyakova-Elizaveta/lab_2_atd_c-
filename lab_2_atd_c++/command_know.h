@@ -4,11 +4,10 @@
 #include <string.h>
 using namespace std;
 class Command_know {
-private:
+public:
 	bool sit;
 	bool to_me;
 	bool lie;
-public:
 	Command_know(bool sit, bool to_me, bool lie);
 	Command_know(bool sit);
 	Command_know();
