@@ -25,11 +25,14 @@ int main() {
 	Character character = Character::Character(0, 0);
 	Command_know command_know = Command_know::Command_know(0, 0, 0);
 	Needs needs = Needs::Needs(0, 0);
-	Dog* your_dog;
-	your_dog = new Dog;
-	*your_dog = Dog::Dog(inf, look, character, needs, command_know);
-	your_dog->display();
-	your_dog->read();
+	Dog* your_dog = new Dog[2];
+	for (int i = 0; i != 2; i++) {
+		your_dog[i] = Dog::Dog(inf, look, character, needs, command_know);
+		your_dog[i].read();
+		your_dog[i].display();
+	}
+	delete[] your_dog;
+	Dog *your_dog_1 = new Dog;
 	while (func != 6) {
 		cout << "Нажмите: 1 - для вывода информации о собаке" << endl;
 		cout << "2 - погладить собаку" << endl;
@@ -40,10 +43,10 @@ int main() {
 		cin >> func;
 		switch (func) {
 		case 1:
-			your_dog->display();
+			your_dog_1->display();
 			break;
 		case 2:
-			touch(*your_dog);
+			touch(*your_dog_1);
 			break;
 		case 3: {
 			cout << "Выберите команду: 1. Сидеть" << endl;
@@ -52,26 +55,27 @@ int main() {
 			cin >> kom;
 			switch (kom) {
 			case 1:
-				command(&your_dog->command_know.sit, your_dog->character.learn);
+				command(&your_dog_1->command_know.sit, your_dog_1->character.learn);
 				break;
 			case 2:
-				command(&your_dog->command_know.lie, your_dog->character.learn);
+				command(&your_dog_1->command_know.lie, your_dog_1->character.learn);
 				break;
 			case 3:
-				command(&your_dog->command_know.to_me, your_dog->character.learn);
+				command(&your_dog_1->command_know.to_me, your_dog_1->character.learn);
 				break;
 			}
 			break;
 		}
 		case 4:
-			eat(your_dog);
+			eat(your_dog_1);
 			break;
 		case 5:
-			walk(your_dog);
+			walk(your_dog_1);
 			break;
 		}
 		fflush(stdin);
 	}
+	delete your_dog_1;
 }
 void touch(Dog dog) {
 	if (dog.character.friendly) cout << dog.inf.name << " рад(а)!" << endl;

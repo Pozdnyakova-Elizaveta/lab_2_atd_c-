@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
+
 class Command_know {
 public:
 	bool sit;

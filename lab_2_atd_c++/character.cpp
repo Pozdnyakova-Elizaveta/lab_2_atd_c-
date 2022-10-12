@@ -22,7 +22,7 @@ void Character::read() {
 	cin >> learn;
 }
 void Character::display() {
-	if (friendly) cout << "Дружелюбная";
-	else cout << "Агрессивная";
-	cout << "Уровень обучаемости - " << learn << endl;
+	if (friendly) cout << "Дружелюбная, ";
+	else cout << "Агрессивная, ";
+	cout << "уровень обучаемости - " << learn << endl;
 }

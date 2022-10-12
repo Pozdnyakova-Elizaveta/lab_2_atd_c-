@@ -17,7 +17,7 @@ Needs::~Needs() {
 }
 void Needs::display() {
 	cout << "Ваша собака хочет: ";
-	if (eat) cout << "есть ";
+	if (eat) cout << "есть, ";
 	if (walk) cout << "гулять";
 	cout << endl;
 }
