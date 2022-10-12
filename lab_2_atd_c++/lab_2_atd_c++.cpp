@@ -28,9 +28,8 @@ int main() {
 	Dog* your_dog;
 	your_dog = new Dog;
 	*your_dog = Dog::Dog(inf, look, character, needs, command_know);
-	Dog dog;
-	your_dog->display(*your_dog);
-	your_dog->read(*your_dog);
+	your_dog->display();
+	your_dog->read(your_dog);
 	while (func != 6) {
 		cout << "Нажмите: 1 - для вывода информации о собаке" << endl;
 		cout << "2 - погладить собаку" << endl;
@@ -41,7 +40,7 @@ int main() {
 		cin >> func;
 		switch (func) {
 		case 1:
-			dog.display(*your_dog);
+			your_dog->display();
 			break;
 		case 2:
 			touch(*your_dog);
@@ -83,7 +82,7 @@ void eat(Dog *dog) {
 		cout << dog->inf.name << " накормлен(а)!" << endl;
 		dog->needs.eat = false;
 	}
-	cout << dog->inf.name << " не хочет есть!" << endl;
+	else cout << dog->inf.name << " не хочет есть!" << endl;
 }
 void walk(Dog *dog) {
 	if (dog->needs.walk) {
@@ -93,11 +92,11 @@ void walk(Dog *dog) {
 	else cout << dog->inf.name << " не хочет гулять!" << endl;
 }
 void command(bool *a, int zn) {
-	if (*a) printf("\nСобака уже это умеет");
+	if (*a) cout << "Собака уже это умеет" << endl;
 	else {
-		printf("Учим...");
+		cout<<"Учим..."<<endl;
 		Sleep((5 - zn) * 4000);
-		printf("\nТеперь собака знает эту команду");
+		cout<<"Теперь собака знает эту команду"<<endl;
 		*a = true;
 	}
 }

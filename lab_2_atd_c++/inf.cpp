@@ -26,6 +26,6 @@ Inf Inf::read() {
 	cin >> inf.age;
 	return inf;
 }
-void Inf::display(Inf inf) {
-	cout << "Ваша собака - " << inf.name << ", порода - " << inf.breed << ", возраст - " << inf.age << endl;
+void Inf::display() {
+	cout << "Ваша собака - " << name << ", порода - " << breed << ", возраст - " << age << endl;
 }

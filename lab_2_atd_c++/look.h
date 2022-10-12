@@ -12,5 +12,5 @@ public:
 	Look();
 	~Look();
 	Look read();
-	void display(Look look);
+	void display();
 };

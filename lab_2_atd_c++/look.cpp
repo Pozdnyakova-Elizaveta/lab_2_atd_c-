@@ -23,6 +23,6 @@ Look Look::read() {
 	cin >> look.eye_color;
 	return look;
 }
-void Look::display(Look look){
-	cout << "Окрас -" << look.color << ", цвет глаз - " << look.eye_color << endl;
+void Look::display(){
+	cout << "Окрас -" << color << ", цвет глаз - " << eye_color << endl;
 }

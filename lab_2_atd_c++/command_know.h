@@ -12,5 +12,5 @@ public:
 	Command_know(bool sit);
 	Command_know();
 	~Command_know();
-	void display(Command_know commands);
+	void display();
 };

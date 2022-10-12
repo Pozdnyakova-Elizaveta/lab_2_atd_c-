@@ -13,5 +13,5 @@ public:
 	Inf();
 	~Inf();
 	Inf read();
-	void display(Inf inf);
+	void display();
 };

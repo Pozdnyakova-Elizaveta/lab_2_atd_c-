@@ -11,5 +11,5 @@ public:
 	Needs(bool eat);
 	Needs();
 	~Needs();
-	void display(Needs needs);
+	void display();
 };

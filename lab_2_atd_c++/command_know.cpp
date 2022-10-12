@@ -16,10 +16,10 @@ Command_know::Command_know() {
 Command_know::~Command_know(){
 
 }
-void Command_know::display(Command_know commands) {
+void Command_know::display() {
 	cout << "Ваша собака знает команды: ";
-	if (commands.sit) cout << "сидеть ";
-	if (commands.to_me) cout << "ко мне ";
-	if (commands.lie) cout << "лежать";
+	if (sit) cout << "сидеть ";
+	if (to_me) cout << "ко мне ";
+	if (lie) cout << "лежать";
 	cout << endl;
 }
