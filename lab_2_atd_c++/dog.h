@@ -19,6 +19,6 @@ public:
 	Dog(Inf inf);
 	Dog();
 	~Dog();
-	void read(Dog *dog);
+	void read();
 	void display();
 };

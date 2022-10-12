@@ -12,6 +12,6 @@ public:
 	Inf(string name);
 	Inf();
 	~Inf();
-	Inf read();
+	void read();
 	void display();
 };

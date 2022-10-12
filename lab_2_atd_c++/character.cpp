@@ -15,14 +15,14 @@ Character::Character() {
 Character::~Character() {
 
 }
-void Character::read(Character character) {
+void Character::read() {
 	cout << "Она дружелюбная? (да - 1, нет - 0)" << endl;
-	cin >> character.friendly;
+	cin >> friendly;
 	cout << "Оцените ее обучаемость от 1 до 5 (5 - легко обучаема):" << endl;
-	cin >> character.learn;
+	cin >> learn;
 }
 void Character::display() {
-	if (friendly) cout << "Дружелюбная" << endl;
-	else cout << "Агрессивная" << endl;
+	if (friendly) cout << "Дружелюбная";
+	else cout << "Агрессивная";
 	cout << "Уровень обучаемости - " << learn << endl;
 }

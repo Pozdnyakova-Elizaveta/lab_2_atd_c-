@@ -11,6 +11,6 @@ public:
 	Look(string color);
 	Look();
 	~Look();
-	Look read();
+	void read();
 	void display();
 };

@@ -29,7 +29,7 @@ int main() {
 	your_dog = new Dog;
 	*your_dog = Dog::Dog(inf, look, character, needs, command_know);
 	your_dog->display();
-	your_dog->read(your_dog);
+	your_dog->read();
 	while (func != 6) {
 		cout << "Нажмите: 1 - для вывода информации о собаке" << endl;
 		cout << "2 - погладить собаку" << endl;
