@@ -18,13 +18,13 @@ Dog::Dog() {
 Dog::~Dog() {
 
 }
-Dog read(Dog dog) {
+Dog Dog::read(Dog dog) {
 	Inf inf = dog.inf.read();
 	Look look = dog.look.read();
 	Character character = dog.character.read();
 	return dog;
 }
-void display(Dog dog) {
+void Dog::display(Dog dog) {
 	cout << "Ваша собака - " << dog.inf.name << ", порода - " << dog.inf.breed << ", возраст - " << dog.inf.age << endl;
 	cout << "Окрас -" << dog.look.color << ", цвет глаз - " << dog.look.eye_color << endl;
 	cout << dog.character.friendly << ", уровень обучаемости - " << dog.character.learn << endl;

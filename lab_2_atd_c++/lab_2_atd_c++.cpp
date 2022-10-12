@@ -6,6 +6,11 @@
 #include <string.h>
 #include <conio.h>
 #include <windows.h>
+#include "inf.h"
+#include "character.h"
+#include "needs.h"
+#include "look.h"
+#include "command_know.h"
 #include "dog.h"
 using namespace std;
 void touch(Dog dog);
@@ -20,9 +25,12 @@ int main() {
 	Character character = Character::Character(0, 0);
 	Command_know command_know = Command_know::Command_know(0, 0, 0);
 	Needs needs = Needs::Needs(0, 0);
-	Dog your_dog = Dog::Dog(inf, look, character, needs, command_know);
-	display(your_dog);
-	read(your_dog);
+	Dog* your_dog;
+	your_dog = new Dog;
+	*your_dog = Dog::Dog(inf, look, character, needs, command_know);
+	Dog dog;
+	your_dog->display(*your_dog);
+	your_dog->read(*your_dog);
 	while (func != 6) {
 		cout << "Нажмите: 1 - для вывода информации о собаке" << endl;
 		cout << "2 - погладить собаку" << endl;
@@ -33,10 +41,10 @@ int main() {
 		cin >> func;
 		switch (func) {
 		case 1:
-			display(your_dog);
+			dog.display(*your_dog);
 			break;
 		case 2:
-			touch(your_dog);
+			touch(*your_dog);
 			break;
 		case 3: {
 			cout << "Выберите команду: 1. Сидеть" << endl;
@@ -45,22 +53,22 @@ int main() {
 			cin >> kom;
 			switch (kom) {
 			case 1:
-				command(&your_dog.command_know.sit, your_dog.character.learn);
+				command(&your_dog->command_know.sit, your_dog->character.learn);
 				break;
 			case 2:
-				command(&your_dog.command_know.lie, your_dog.character.learn);
+				command(&your_dog->command_know.lie, your_dog->character.learn);
 				break;
 			case 3:
-				command(&your_dog.command_know.to_me, your_dog.character.learn);
+				command(&your_dog->command_know.to_me, your_dog->character.learn);
 				break;
 			}
 			break;
 		}
 		case 4:
-			eat(&your_dog);
+			eat(your_dog);
 			break;
 		case 5:
-			walk(&your_dog);
+			walk(your_dog);
 			break;
 		}
 		fflush(stdin);
