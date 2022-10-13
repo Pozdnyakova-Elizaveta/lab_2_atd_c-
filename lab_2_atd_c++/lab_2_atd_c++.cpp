@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <conio.h>
-#include <windows.h>
 #include "inf.h"
 #include "character.h"
 #include "needs.h"
@@ -13,10 +12,6 @@
 #include "command_know.h"
 #include "dog.h"
 using namespace std;
-void touch(Dog dog);
-void eat(Dog *dog);
-void walk(Dog *dog);
-void command(bool *a, int zn);
 int main() {
 	setlocale(LC_ALL, "RUS");
 	int func = 0, kom = 0;
@@ -25,14 +20,8 @@ int main() {
 	Character character = Character::Character(0, 0);
 	Command_know command_know = Command_know::Command_know(0, 0, 0);
 	Needs needs = Needs::Needs(0, 0);
-	Dog* your_dog = new Dog[2];
-	for (int i = 0; i != 2; i++) {
-		your_dog[i] = Dog::Dog(inf, look, character, needs, command_know);
-		your_dog[i].read();
-		your_dog[i].display();
-	}
-	delete[] your_dog;
 	Dog *your_dog_1 = new Dog;
+	*your_dog_1 = Dog::Dog(inf, look, character, needs, command_know);
 	while (func != 6) {
 		cout << "Нажмите: 1 - для вывода информации о собаке" << endl;
 		cout << "2 - погладить собаку" << endl;
@@ -46,7 +35,7 @@ int main() {
 			your_dog_1->display();
 			break;
 		case 2:
-			touch(*your_dog_1);
+			your_dog_1->touch(*your_dog_1);
 			break;
 		case 3: {
 			cout << "Выберите команду: 1. Сидеть" << endl;
@@ -55,55 +44,29 @@ int main() {
 			cin >> kom;
 			switch (kom) {
 			case 1:
-				command(&your_dog_1->command_know.sit, your_dog_1->character.learn);
+				your_dog_1->command(your_dog_1,1);
 				break;
 			case 2:
-				command(&your_dog_1->command_know.lie, your_dog_1->character.learn);
+				your_dog_1->command(your_dog_1, 2);
 				break;
 			case 3:
-				command(&your_dog_1->command_know.to_me, your_dog_1->character.learn);
+				your_dog_1->command(your_dog_1, 3);
 				break;
 			}
 			break;
 		}
 		case 4:
-			eat(your_dog_1);
+			your_dog_1->eat(your_dog_1);
 			break;
 		case 5:
-			walk(your_dog_1);
+			your_dog_1->walk(your_dog_1);
 			break;
 		}
 		fflush(stdin);
 	}
 	delete your_dog_1;
 }
-void touch(Dog dog) {
-	if (dog.character.friendly) cout << dog.inf.name << " рад(а)!" << endl;
-	else  cout << dog.inf.name << " не нравится!" << endl;
-}
-void eat(Dog *dog) {
-	if (dog->needs.eat) {
-		cout << dog->inf.name << " накормлен(а)!" << endl;
-		dog->needs.eat = false;
-	}
-	else cout << dog->inf.name << " не хочет есть!" << endl;
-}
-void walk(Dog *dog) {
-	if (dog->needs.walk) {
-		cout << dog->inf.name << " погулял(а)!" << endl;
-		dog->needs.walk = false;
-	}
-	else cout << dog->inf.name << " не хочет гулять!" << endl;
-}
-void command(bool *a, int zn) {
-	if (*a) cout << "Собака уже это умеет" << endl;
-	else {
-		cout<<"Учим..."<<endl;
-		Sleep((5 - zn) * 4000);
-		cout<<"Теперь собака знает эту команду"<<endl;
-		*a = true;
-	}
-}
+
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 

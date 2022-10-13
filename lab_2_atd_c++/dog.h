@@ -21,4 +21,8 @@ public:
 	~Dog();
 	void read();
 	void display();
+	void touch(Dog dog);
+	void eat(Dog *dog);
+	void walk(Dog* dog);
+	void command(Dog* dog, int com);
 };
