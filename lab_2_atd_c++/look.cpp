@@ -7,7 +7,7 @@ Look::Look(string color, string eye_color) {
 	this->eye_color = eye_color;
 }
 Look::Look(string color) {
-	this->color;
+	this->color=color;
 }
 Look::Look() {
 

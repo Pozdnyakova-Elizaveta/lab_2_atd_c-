@@ -7,7 +7,7 @@ Character::Character(bool friendly, int learn) {
 	this->learn = learn;
 }
 Character::Character(int learn) {
-	this->learn;
+	this->learn=learn;
 }
 Character::Character() {
 

@@ -7,7 +7,7 @@ Needs::Needs(bool eat, bool walk) {
 	this->walk = true;
 }
 Needs::Needs(bool eat) {
-	this->eat;
+	this->eat=eat;
 }
 Needs::Needs() {
 

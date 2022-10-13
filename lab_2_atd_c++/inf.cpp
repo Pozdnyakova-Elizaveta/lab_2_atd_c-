@@ -8,7 +8,7 @@ Inf::Inf(string name, int age, string breed) {
 	this->breed = breed;
 }
 Inf::Inf(string name) {
-	this->name;
+	this->name=name;
 }
 Inf::Inf() {
 

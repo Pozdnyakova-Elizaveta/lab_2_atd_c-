@@ -8,7 +8,7 @@ Command_know::Command_know(bool sit, bool to_me, bool lie) {
 	this->lie = lie;
 }
 Command_know::Command_know(bool sit) {
-	this->sit;
+	this->sit=sit;
 }
 Command_know::Command_know() {
 

@@ -11,7 +11,7 @@ Dog::Dog(Inf inf, Look look, Character character, Needs needs, Command_know comm
 	this->command_know = command_know;
 }
 Dog::Dog(Inf inf) {
-	this->inf;
+	this->inf=inf;
 }
 Dog::Dog() {
 
