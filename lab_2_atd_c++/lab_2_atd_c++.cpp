@@ -28,6 +28,7 @@ int main() {
 	}
 	Dog *your_dog_1 = new Dog;
 	*your_dog_1 = Dog::Dog(inf, look, character, needs, command_know);
+	your_dog_1->read();
 	while (func != 6) {
 		cout << "Нажмите: 1 - для вывода информации о собаке" << endl;
 		cout << "2 - погладить собаку" << endl;
