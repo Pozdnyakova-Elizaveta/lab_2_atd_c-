@@ -20,6 +20,12 @@ int main() {
 	Character character = Character::Character(0, 0);
 	Command_know command_know = Command_know::Command_know(0, 0, 0);
 	Needs needs = Needs::Needs(0, 0);
+	Dog* your_dog = new Dog[2];
+	for (int i = 0; i != 2; i++) {
+		your_dog[i] = Dog::Dog(inf, look, character, needs, command_know);
+		your_dog[i].read();
+		your_dog[i].display();
+	}
 	Dog *your_dog_1 = new Dog;
 	*your_dog_1 = Dog::Dog(inf, look, character, needs, command_know);
 	while (func != 6) {

@@ -9,12 +9,13 @@
 #include "character.h"
 using namespace std;
 class Dog {
-public:
+private:
 	Inf inf;
 	Look look;
 	Character character;
 	Needs needs;
 	Command_know command_know;
+public:	
 	Dog(Inf inf, Look look, Character character, Needs needs, Command_know command_know);
 	Dog(Inf inf);
 	Dog();
