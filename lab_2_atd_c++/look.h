@@ -4,9 +4,10 @@
 #include <string.h>
 using namespace std;
 class Look {
-public:
+private:
 	string color;
 	string eye_color;
+public:
 	Look(string color, string eye_color);
 	Look(string color);
 	Look();

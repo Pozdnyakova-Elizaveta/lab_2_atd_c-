@@ -4,13 +4,17 @@
 #include <string.h>
 using namespace std;
 class Character {
-public:
+private:
 	bool friendly;
 	int learn;
+public:
 	Character(bool friendly, int learn);
 	Character(int learn);
 	Character();
 	~Character();
 	void read();
 	void display();
+	bool get_friendly();
+	void set_learn(int c);
+	int get_learn();
 };

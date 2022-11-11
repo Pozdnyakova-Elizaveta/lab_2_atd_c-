@@ -4,12 +4,17 @@
 #include <string.h>
 using namespace std;
 class Needs {
-public:
+private:
 	bool eat;
 	bool walk;
+public:
 	Needs(bool eat, bool walk);
 	Needs(bool eat);
 	Needs();
 	~Needs();
 	void display();
+	bool get_eat();
+	bool get_walk();
+	void set_eat(bool a);
+	void set_walk(bool a);
 };

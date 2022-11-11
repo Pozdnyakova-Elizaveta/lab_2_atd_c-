@@ -12,10 +12,12 @@ class Dog {
 private:
 	Inf inf;
 	Look look;
-	Character character;
 	Needs needs;
 	Command_know command_know;
-public:	
+	Character character;
+public:
+	static int sum;
+	static int sum_friendly;
 	Dog(Inf inf, Look look, Character character, Needs needs, Command_know command_know);
 	Dog(Inf inf);
 	Dog();
@@ -26,4 +28,12 @@ public:
 	void eat(Dog *dog);
 	void walk(Dog* dog);
 	void command(Dog* dog, int com);
+	Inf get_inf();
+	void set_inf(Inf inf);
+	Character get_character();
+	void set_character(Character character);
+	static void number_dogs();
+	Character operator++();
+	Character operator++(int d);
+	Dog& search(Dog* a, string name);
 };

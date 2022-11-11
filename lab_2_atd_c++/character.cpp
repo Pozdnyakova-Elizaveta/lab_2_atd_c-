@@ -8,12 +8,20 @@ Character::Character(bool friendly, int learn) {
 }
 Character::Character(int learn) {
 	this->learn=learn;
+	friendly = true;
 }
 Character::Character() {
-
+	learn = 0;
+	friendly = true;
 }
 Character::~Character() {
 
+}
+bool Character::get_friendly() {
+	return friendly;
+}
+int Character::get_learn() {
+	return learn;
 }
 void Character::read() {
 	cout << "Она дружелюбная? (да - 1, нет - 0)" << endl;
@@ -26,3 +34,4 @@ void Character::display() {
 	else cout << "Агрессивная, ";
 	cout << "уровень обучаемости - " << learn << endl;
 }
+void Character::set_learn(int c) { learn = c; }
