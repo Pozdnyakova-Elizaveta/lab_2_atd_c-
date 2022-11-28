@@ -35,3 +35,4 @@ void Character::display() {
 	cout << "уровень обучаемости - " << learn << endl;
 }
 void Character::set_learn(int c) { learn = c; }
+void Character::set_friendly(bool a) { friendly = a; }

@@ -16,6 +16,9 @@ public:
 	void read();
 	void display();
 	string get_name();
+	void set_name(string s);
+	void set_age(int a);
+	void set_breed(string s);
 	Inf operator+(int i);
 	Inf operator-(int i);
 	friend int year_of_birthday(Inf inf);

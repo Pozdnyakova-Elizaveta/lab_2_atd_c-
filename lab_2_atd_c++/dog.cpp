@@ -1,6 +1,7 @@
 #include "dog.h"
 #include <iostream>
-#include <string.h>
+#include <fstream>
+#include <string>
 #include <windows.h>
 using namespace std;
 int Dog::sum = 0;
@@ -34,9 +35,8 @@ void Dog::read() {
 	inf.read();
 	look.read();
 	character.read();
-	sum = sum + 1;
-	if (this->character.get_friendly()) sum_friendly++;
 }
+void Dog::set_look(Look look) { this->look = look; }
 void Dog::display() {
 	inf.display();
 	look.display();
@@ -123,3 +123,142 @@ Dog& Dog::search(Dog a[], string name) {
 	while (i != 2 && a[i].get_inf().get_name().compare(name) != 0) i++;
 	return a[i];
 }
+void Dog::work_massiv(Dog dog[]) {
+	ifstream in;
+	try
+	{
+		in.open("spisok.txt");
+		if (!(in.is_open())) throw 0;
+		string name, breed, color, color_eye;
+		int age, learn;
+		bool friendly;
+		int p = 0;
+		if (in.peek() == EOF) throw 'e';
+		for (int i = 0; i != 2; i++) {
+				try {
+					if (in.peek() == EOF) throw "error";
+					if (!(in >> name)) throw '0';
+					if (!(in >> age)) throw 0;
+					if (age < 0) throw 1;
+					if (!(in >> breed)) throw '1';
+					if (!(in >> color)) throw '2';
+					if (!(in >> color_eye)) throw '3';
+					if (!(in >> friendly)) throw false;
+					if (!(in >> learn)) throw 2;
+					if (learn < 1 || learn>5) throw 3;
+					Inf inf = Inf::Inf(name, age, breed);
+					Look look = Look::Look(color, color_eye);
+					Character character = Character::Character(friendly, learn);
+					dog[i].set_inf(inf);
+					dog[i].set_character(character);
+					dog[i].set_look(look);
+					sum = sum + 1;
+					if (dog[i].character.get_friendly()) sum_friendly++;
+					dog[i].display();
+					cout << "Год рождения - " << year_of_birthday(dog[i].get_inf()) << endl;
+				}
+				catch (const char* a) {
+					if(p==0)cout << "В файле недостаточно данных для заполнения массива" << endl;
+				}
+				catch (int a) {
+					if (a == 0) cout << "Не удалось считать численное значение возраста" << endl;
+					if (a == 1) cout << "Возраст должен быть положительным числом" << endl;
+					if (a==2) cout << "Не удалось считать численное значение обучаемости" << endl;
+					if (a == 3) cout << "Уровень обучаемости должен быть числом от 1 до 5" << endl;
+					p = 1;
+				}
+				catch (char a) {
+					cout << "Не удалось считать строковое значение";
+					if (&a == "0") cout << " клички" << endl;
+					if (&a == "1") cout << " породы" << endl;
+					if (&a == "2") cout << " окраса" << endl;
+					if (&a == "3") cout << " цвета глаз" << endl;
+					p = 1;
+				}
+				catch (bool a) {
+					cout << "Не удалось считать булевое значение дружелюбности" << endl;
+					p = 1;
+				}
+			}
+			in.close();
+	}
+	catch (int b) {
+		cout<<"Не удалось открыть файл"<< endl;
+	}
+	catch (char b) {
+		cout << "Файл пустой" << endl;
+	}
+}
+int Dog::work_massiv_two(Dog (*a)[2]) {
+	ifstream in;
+	int p = 0;
+	try {
+		in.open("spisok2.txt");
+		if (!(in.is_open())) throw 0;
+		string name, breed, color, color_eye;
+		int age, learn;
+		bool friendly;
+		if (in.peek() == EOF) throw '0';
+		for (int i = 0; i != 2; i++)
+		{
+			for (int j = 0; j != 2; j++) {
+				try {
+					if (in.peek() == EOF) throw "error";
+					if (!(in >> name)) throw '0';
+					if (!(in >> age)) throw 0;
+					if (age < 0) throw 1;
+					if (!(in >> breed)) throw '1';
+					if (!(in >> color)) throw '2';
+					if (!(in >> color_eye)) throw '3';
+					if (!(in >> friendly)) throw false;
+					if (!(in >> learn)) throw 2;
+					if (learn < 1 || learn>5) throw 3;
+					Inf inf = Inf::Inf(name, age, breed);
+					Look look = Look::Look(color, color_eye);
+					Character character = Character::Character(friendly, learn);
+					a[i][j].set_inf(inf);
+					a[i][j].set_character(character);
+					a[i][j].set_look(look);
+					sum = sum + 1;
+					if (a[i][j].get_character().get_friendly()) sum_friendly++;
+					a[i][j].display();
+					cout << "Год рождения - " << year_of_birthday(a[i][j].get_inf()) << endl;
+				}
+				catch (const char* a) {
+					if (p == 0) cout << "В файле недостаточно данных для заполнения массива" << endl;
+					p = 1;
+				}
+				catch (int a) {
+					if (a == 0) cout << "Не удалось считать численное значение возраста" << endl;
+					if (a == 1) cout << "Возраст должен быть положительным числом" << endl;
+					if (a == 2) cout << "Не удалось считать численное значение обучаемости" << endl;
+					if (a == 3) cout << "Уровень обучаемости должен быть числом от 1 до 5" << endl;
+					p = 1;
+				}
+				catch (char a) {
+					cout << "Не удалось считать строковое значение";
+					if (&a == "0") cout << " клички" << endl;
+					if (&a == "1") cout << " породы" << endl;
+					if (&a == "2") cout << " окраса" << endl;
+					if (&a == "3") cout << " цвета глаз" << endl;
+					p = 1;
+				}
+				catch (bool a) {
+					cout << "Не удалось считать булевое значение дружелюбности" << endl;
+					p = 1;
+				}
+			}
+		}
+		in.close();
+	}
+	catch (int b) {
+		cout << "Не удалось открыть файл" << endl;
+		p = 1;
+	}
+	catch (char b) {
+		cout << "Файл пустой" << endl;
+		p = 1;
+	}
+	return p;
+}
+Look Dog::get_look() { return look; }

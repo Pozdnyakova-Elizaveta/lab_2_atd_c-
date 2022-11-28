@@ -22,6 +22,9 @@ Inf::~Inf() {
 
 }
 string Inf::get_name() { return name;}
+void Inf::set_name(std::string s){ name = s; }
+void Inf::set_age(int a) { age = a; }
+void Inf::set_breed(string s) { breed = s; }
 void Inf::read() {
 	cout << "¬ведите кличку собаки: ";
 	cin >> name;

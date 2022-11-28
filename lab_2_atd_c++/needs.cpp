@@ -11,8 +11,8 @@ Needs::Needs(bool eat) {
 	walk = true;
 }
 Needs::Needs() {
-	eat = true;
-	walk = true;
+	eat = false;
+	walk = false;
 
 }
 Needs::~Needs() {

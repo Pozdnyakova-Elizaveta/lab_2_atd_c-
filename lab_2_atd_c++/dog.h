@@ -30,10 +30,14 @@ public:
 	void command(Dog* dog, int com);
 	Inf get_inf();
 	void set_inf(Inf inf);
+	void set_look(Look look);
 	Character get_character();
+	Look get_look();
 	void set_character(Character character);
 	static void number_dogs();
 	Character operator++();
 	Character operator++(int d);
 	Dog& search(Dog* a, string name);
+	static void work_massiv(Dog dog[]);
+	static int work_massiv_two(Dog (*a)[2]);
 };

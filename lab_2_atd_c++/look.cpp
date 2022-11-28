@@ -26,3 +26,5 @@ void Look::read() {
 void Look::display(){
 	cout << "Окрас -" << color << ", цвет глаз - " << eye_color << endl;
 }
+void Look::set_color(string s) { color = s; }
+void Look::set_eye_color(string s) { eye_color = s; }
