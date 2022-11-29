@@ -36,10 +36,10 @@
     <ClCompile Include="needs.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Ride_character.cpp">
+    <ClCompile Include="Sled_dog.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Sled_dog.cpp">
+    <ClCompile Include="ride_character.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,10 +62,10 @@
     <ClInclude Include="needs.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Ride_character.h">
+    <ClInclude Include="Sled_dog.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Sled_dog.h">
+    <ClInclude Include="ride_character.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

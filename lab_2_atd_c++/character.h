@@ -13,9 +13,9 @@ public:
 	Character();
 	~Character();
 	void read();
-	void display();
 	bool get_friendly();
 	void set_learn(int c);
 	void set_friendly(bool a);
 	int get_learn();
+	friend void operator<< (ostream& o, Character c);
 };

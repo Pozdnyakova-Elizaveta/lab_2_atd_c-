@@ -14,7 +14,7 @@ public:
 	Command_know(bool sit);
 	Command_know();
 	~Command_know();
-	void display();
+	friend void operator<< (ostream& o, Command_know c);
 	bool get_sit();
 	bool get_to_me();
 	bool get_lie();

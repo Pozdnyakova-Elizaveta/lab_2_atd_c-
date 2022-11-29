@@ -10,8 +10,8 @@
 #include "needs.h"
 #include "look.h"
 #include "command_know.h"
-#include "dog.h"
 #include <fstream>
+#include "Sled_dog.h"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "RUS");
@@ -21,6 +21,12 @@ int main() {
 	Character character = Character::Character(0, 0);
 	Command_know command_know = Command_know::Command_know(0, 0, 0);
 	Needs needs = Needs::Needs(0, 0);
+	Ride_character ride = Ride_character::Ride_character(0, 0);
+	Sled_dog s_dog = Sled_dog::Sled_dog(inf, look, character, needs, command_know, ride);
+	s_dog.read();
+	cout << s_dog;
+	Sled_dog s1_dog = s_dog;
+	cout << "s1_dog\n\n" << endl << s1_dog;
 	Dog* your_dog = new Dog[2];
 	Dog::work_massiv(your_dog);
 	delete [] your_dog;
@@ -83,7 +89,7 @@ int main() {
 		}
 		switch (func) {
 		case 1:
-			your_dog_1.display();
+			cout<<your_dog_1;
 			break;
 		case 2:
 			your_dog_1.touch(your_dog_1);

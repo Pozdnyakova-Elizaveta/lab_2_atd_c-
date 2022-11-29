@@ -22,9 +22,9 @@ bool Needs::get_eat() { return eat; }
 bool Needs::get_walk() { return walk; }
 void Needs::set_eat(bool a) { eat = a; }
 void Needs::set_walk(bool a) { walk = a; }
-void Needs::display() {
+void operator<< (ostream& o, Needs n){
 	cout << "Ваша собака хочет: ";
-	if (!eat) cout << "есть, ";
-	if (!walk) cout << "гулять";
+	if (!n.eat) cout << "есть, ";
+	if (!n.walk) cout << "гулять";
 	cout << endl;
 }

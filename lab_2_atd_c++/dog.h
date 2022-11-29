@@ -9,7 +9,7 @@
 #include "character.h"
 using namespace std;
 class Dog {
-private:
+protected:
 	Inf inf;
 	Look look;
 	Needs needs;
@@ -23,12 +23,14 @@ public:
 	Dog();
 	~Dog();
 	void read();
-	void display();
 	void touch(Dog dog);
 	void eat(Dog *dog);
 	void walk(Dog* dog);
 	void command(Dog* dog, int com);
+	friend void operator<< (ostream& o, Dog d);
 	Inf get_inf();
+	Needs get_needs();
+	Command_know get_command_know();
 	void set_inf(Inf inf);
 	void set_look(Look look);
 	Character get_character();

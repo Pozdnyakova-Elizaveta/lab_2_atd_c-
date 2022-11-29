@@ -27,11 +27,11 @@ bool Command_know::get_lie() { return lie; }
 void Command_know::set_sit(bool a) { sit = a; }
 void Command_know::set_to_me(bool a) { to_me = a; }
 void Command_know::set_lie(bool a) { lie = a; }
-void Command_know::display() {
+void operator<< (ostream& o, Command_know c) {
 	cout << "Ваша собака знает команды: ";
-	if (sit) cout << "сидеть, ";
-	if (to_me) cout << "ко мне, ";
-	if (lie) cout << "лежать";
+	if (c.sit) cout << "сидеть, ";
+	if (c.to_me) cout << "ко мне, ";
+	if (c.lie) cout << "лежать";
 	cout << endl;
 }
 int* Command_know::count_command(Command_know a, int* k) {

@@ -12,7 +12,7 @@ public:
 	Needs(bool eat);
 	Needs();
 	~Needs();
-	void display();
+	friend void operator<< (ostream& o, Needs n);
 	bool get_eat();
 	bool get_walk();
 	void set_eat(bool a);

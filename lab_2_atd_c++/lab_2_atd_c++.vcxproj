@@ -148,7 +148,7 @@
     <ClCompile Include="lab_2_atd_c++.cpp" />
     <ClCompile Include="look.cpp" />
     <ClCompile Include="needs.cpp" />
-    <ClCompile Include="Ride_character.cpp" />
+    <ClCompile Include="ride_character.cpp" />
     <ClCompile Include="Sled_dog.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,7 +158,7 @@
     <ClInclude Include="inf.h" />
     <ClInclude Include="look.h" />
     <ClInclude Include="needs.h" />
-    <ClInclude Include="Ride_character.h" />
+    <ClInclude Include="ride_character.h" />
     <ClInclude Include="Sled_dog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

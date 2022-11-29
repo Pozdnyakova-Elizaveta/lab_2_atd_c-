@@ -29,10 +29,10 @@ void Character::read() {
 	cout << "Оцените ее обучаемость от 1 до 5 (5 - легко обучаема):" << endl;
 	cin >> learn;
 }
-void Character::display() {
-	if (friendly) cout << "Дружелюбная, ";
+void operator<< (ostream& o, Character c) {
+	if (c.friendly) cout << "Дружелюбная, ";
 	else cout << "Агрессивная, ";
-	cout << "уровень обучаемости - " << learn << endl;
+	cout << "уровень обучаемости - " << c.learn << endl;
 }
 void Character::set_learn(int c) { learn = c; }
 void Character::set_friendly(bool a) { friendly = a; }

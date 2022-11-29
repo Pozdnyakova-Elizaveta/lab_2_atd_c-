@@ -15,5 +15,5 @@ public:
 	void set_eye_color(string s);
 	~Look();
 	void read();
-	void display();
+	friend void operator<< (ostream& o, Look l);
 };

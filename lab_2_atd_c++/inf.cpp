@@ -33,8 +33,9 @@ void Inf::read() {
 	cout << "Введите возраст: ";
 	cin >> age;
 }
-void Inf::display() {
-	cout << "Ваша собака - " << name << ", порода - " << breed << ", возраст - " << age << endl;
+void operator<< (ostream& o, Inf i) {
+	cout << "Ваша собака - " << i.name << ", порода - " << i.breed << ", возраст - " << i.age << endl;
+
 }
 Inf Inf::operator+(int i) {
 	Inf dopoln;

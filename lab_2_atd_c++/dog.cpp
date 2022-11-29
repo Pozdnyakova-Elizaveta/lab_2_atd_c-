@@ -26,6 +26,8 @@ Inf Dog::get_inf() { return inf; }
 void Dog::set_inf(Inf inf) { this->inf = inf; }
 Character Dog::get_character() { return character; }
 void Dog::set_character(Character character) { this->character = character; }
+Needs Dog::get_needs() { return needs; }
+Command_know Dog::get_command_know() { return command_know; }
 void Dog::number_dogs() {
 	int k = sum - sum_friendly;
 	printf("Всего собак - %d\n", sum);
@@ -37,12 +39,12 @@ void Dog::read() {
 	character.read();
 }
 void Dog::set_look(Look look) { this->look = look; }
-void Dog::display() {
-	inf.display();
-	look.display();
-	character.display();
-	command_know.display();
-	needs.display();
+void operator<< (ostream& o, Dog d) {
+	cout << d.inf;
+	cout << d.look;
+	cout << d.character;
+	cout << d.command_know;
+	cout << d.needs;
 }
 void Dog::touch(Dog dog) {
 	if (dog.character.get_friendly()) cout << dog.inf.get_name() << " рад(а)!" << endl;
@@ -154,7 +156,7 @@ void Dog::work_massiv(Dog dog[]) {
 					dog[i].set_look(look);
 					sum = sum + 1;
 					if (dog[i].character.get_friendly()) sum_friendly++;
-					dog[i].display();
+					cout<<dog[i];
 					cout << "Год рождения - " << year_of_birthday(dog[i].get_inf()) << endl;
 				}
 				catch (const char* a) {
@@ -221,7 +223,7 @@ int Dog::work_massiv_two(Dog (*a)[2]) {
 					a[i][j].set_look(look);
 					sum = sum + 1;
 					if (a[i][j].get_character().get_friendly()) sum_friendly++;
-					a[i][j].display();
+					cout<<a[i][j];
 					cout << "Год рождения - " << year_of_birthday(a[i][j].get_inf()) << endl;
 				}
 				catch (const char* a) {

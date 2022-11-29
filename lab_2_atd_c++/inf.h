@@ -14,7 +14,7 @@ public:
 	Inf();
 	~Inf();
 	void read();
-	void display();
+	friend void operator<< (ostream& o, Inf i);
 	string get_name();
 	void set_name(string s);
 	void set_age(int a);
