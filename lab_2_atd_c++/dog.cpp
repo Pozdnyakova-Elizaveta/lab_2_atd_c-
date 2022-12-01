@@ -57,12 +57,12 @@ void Dog::eat(Dog* dog) {
 	}
 	else cout << dog->inf.get_name() << " не хочет есть!" << endl;
 }
-void Dog::walk(Dog* dog) {
-	if (!dog->needs.get_walk()) {
-		cout << dog->inf.get_name() << " погулял(а)!" << endl;
-		dog->needs.set_walk(true);
+void Dog::walk() {
+	if (!this->needs.get_walk()) {
+		cout << this->inf.get_name() << " погулял(а)!" << endl;
+		this->needs.set_walk(true);
 	}
-	else cout << dog->inf.get_name() << " не хочет гулять!" << endl;
+	else cout << this->inf.get_name() << " не хочет гулять!" << endl;
 }
 void Dog::command(Dog* dog, int com) {
 	switch (com) {

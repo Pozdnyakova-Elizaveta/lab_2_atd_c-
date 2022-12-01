@@ -1,7 +1,10 @@
 #include "Sled_dog.h"
 #include <windows.h>
-Sled_dog::Sled_dog(Inf inf, Look look, Character character, Needs needs, Command_know command_know, Ride_character ride_character):Dog(inf,look,character,needs,command_know) {
+Sled_dog::Sled_dog(Inf inf, Look look, Character character, Needs needs, Command_know command_know, Ride_character<float> ride_character):Dog(inf,look,character,needs,command_know) {
 	this->ride_character = ride_character;
+}
+Sled_dog::Sled_dog() {
+
 }
 void Sled_dog::command() {
 	cout << "Тренируем..." << endl;
