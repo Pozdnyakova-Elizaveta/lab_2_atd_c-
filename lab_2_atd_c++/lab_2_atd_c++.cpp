@@ -14,8 +14,10 @@
 #include "Sled_dog.h"
 #include "Man_with_dog.h"
 #include "Man_with_sled_dog.h"
+#include <vector>
 using namespace std;
 int main() {
+	vector <Dog> all_dog;
 	setlocale(LC_ALL, "RUS");
 	int func = 0, kom = 0;
 	Inf inf;
