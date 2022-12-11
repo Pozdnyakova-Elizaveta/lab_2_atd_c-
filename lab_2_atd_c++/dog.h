@@ -26,6 +26,8 @@ public:
 	void touch(Dog dog);
 	void eat(Dog *dog);
 	void walk();
+	int number_skills();
+	void skills_output();
 	void command(Dog* dog, int com);
 	friend void operator<< (ostream& o, Dog d);
 	Inf get_inf();

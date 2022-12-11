@@ -12,22 +12,47 @@
 #include "command_know.h"
 #include <fstream>
 #include "Sled_dog.h"
+#include "Man_with_dog.h"
+#include "Man_with_sled_dog.h"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "RUS");
 	int func = 0, kom = 0;
-	Inf inf = Inf::Inf("name", 0, "breed");
-	Look look = Look::Look("color", "color eyes");
-	Character character = Character::Character(0, 0);
+	Inf inf;
+	Look look;
+	Character character;
 	Command_know command_know = Command_know::Command_know(0, 0, 0);
 	Needs needs = Needs::Needs(0, 0);
-	Ride_character ride = Ride_character::Ride_character(0, 0);
-	Sled_dog s_dog = Sled_dog::Sled_dog(inf, look, character, needs, command_know, ride);
+	cout<<"Использование шаблона класса"<< endl;
+	Ride_character<float> ride = Ride_character<float>::Ride_character(1.5, 40);
+	Ride_character<string> ride_2 = Ride_character<string>::Ride_character("тридцать", "пять");
+	ride.display();
+	ride_2.display();
+	Sled_dog s_dog;
+	s_dog=Sled_dog::Sled_dog(inf, look, character, needs, command_know, ride);
+	cout << "\nВведите информцию об ездовой собаке" << endl;
 	s_dog.read();
 	cout << s_dog;
-	Sled_dog s1_dog = s_dog;
-	cout << "s1_dog\n\n" << endl << s1_dog;
-	Dog* your_dog = new Dog[2];
+	cout<<"\nВведите информцию об обычной собаке"<< endl;
+	inf.read();
+	look.read();
+	character.read();
+	Dog* dog1 = new Dog(inf, look, character, needs, command_know);
+	Sled_dog* s_dog1 = new Sled_dog;
+	*s_dog1 = s_dog;
+	cout << "\nКоличество навыков" << endl;
+	s_dog1->skills_output();
+	dog1->skills_output();
+	Man_with_dog* man1 = new Man_with_dog("Ivanov",inf, look, character, needs, command_know, 2.5);
+	Man_with_sled_dog* man2 = new Man_with_sled_dog("Sidorov", s_dog.get_inf(), s_dog.get_look(), s_dog.get_character(), needs, command_know, s_dog.get_ride_character());
+	cout<<"\nВладелец собаки и пройденное расстояние"<< endl;
+	man1->moving_output(man1->moving(3));
+	man2->moving_output(man2->moving(3));
+	delete dog1;
+	delete s_dog1;
+	delete man1;
+	delete man2;
+	/*/Dog* your_dog = new Dog[2];
 	Dog::work_massiv(your_dog);
 	delete [] your_dog;
 	Dog your_dog2[2][2];
@@ -37,14 +62,13 @@ int main() {
 		func = 8;
 		cout << "\n\nИсправьте ошибку в файле для дальнейшей работы" << endl;
 	}
-	/*/Dog* search_dog = new Dog;
+	Dog* search_dog = new Dog;
 	string search_name;
 	cout << "Введите имя собаки для поиска: " << endl;
 	cin >> search_name;
 	*search_dog = your_dog->search(your_dog, search_name);
 	search_dog->display();
 	delete[] your_dog;
-	/*/
 	int a1, a2;
 	if (func != 8) {
 		Dog your_dog_1;
@@ -128,7 +152,7 @@ int main() {
 			your_dog_1.eat(&your_dog_1);
 			break;
 		case 5:
-			your_dog_1.walk(&your_dog_1);
+			your_dog_1.walk();
 			break;
 		case 6: {
 			int number;
@@ -189,7 +213,7 @@ int main() {
 		}
 		fflush(stdin);
 	}
-	}
+	}/*/
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

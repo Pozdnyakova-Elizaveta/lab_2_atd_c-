@@ -147,8 +147,10 @@
     <ClCompile Include="inf.cpp" />
     <ClCompile Include="lab_2_atd_c++.cpp" />
     <ClCompile Include="look.cpp" />
+    <ClCompile Include="Man.cpp" />
+    <ClCompile Include="Man_with_dog.cpp" />
+    <ClCompile Include="Man_with_sled_dog.cpp" />
     <ClCompile Include="needs.cpp" />
-    <ClCompile Include="ride_character.cpp" />
     <ClCompile Include="Sled_dog.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +159,9 @@
     <ClInclude Include="dog.h" />
     <ClInclude Include="inf.h" />
     <ClInclude Include="look.h" />
+    <ClInclude Include="Man.h" />
+    <ClInclude Include="Man_with_dog.h" />
+    <ClInclude Include="Man_with_sled_dog.h" />
     <ClInclude Include="needs.h" />
     <ClInclude Include="ride_character.h" />
     <ClInclude Include="Sled_dog.h" />

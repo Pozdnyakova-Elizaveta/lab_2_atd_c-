@@ -11,6 +11,8 @@ public:
 	void command();
 	void read();
 	void operator=(Dog a);
+	Ride_character<float> get_ride_character();
 	friend void operator<< (ostream& o, Sled_dog d);
+	int number_skills();
 };
 

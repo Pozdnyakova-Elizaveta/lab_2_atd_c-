@@ -191,6 +191,17 @@ void Dog::work_massiv(Dog dog[]) {
 		cout << "Файл пустой" << endl;
 	}
 }
+int Dog::number_skills() {
+	int n = 0;
+	if (command_know.get_lie()) n++;
+	if (command_know.get_to_me()) n++;
+	if (command_know.get_sit()) n++;
+	return n;
+}
+void Dog::skills_output() {
+	int k = number_skills();
+	cout << "Собака "<<inf.get_name()<<" имеет " << k << " навыков" << endl;
+}
 int Dog::work_massiv_two(Dog (*a)[2]) {
 	ifstream in;
 	int p = 0;

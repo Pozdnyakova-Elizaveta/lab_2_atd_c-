@@ -12,9 +12,7 @@ void Sled_dog::command() {
 	ride_character.set_speed(ride_character.get_speed()+1);
 }
 void Sled_dog::read() {
-	inf.read();
-	look.read();
-	character.read();
+	Dog::read();
 	ride_character.read();
 }
 void operator<< (ostream& o, Sled_dog d) {
@@ -33,4 +31,13 @@ void Sled_dog::operator=(Dog a) {
 	this->command_know = a.get_command_know();
 	this->ride_character.set_speed(3);
 	this->ride_character.set_max_way(30);
+}
+Ride_character<float> Sled_dog::get_ride_character() { return ride_character; }
+int Sled_dog::number_skills() {
+	int n = 0;
+	if (command_know.get_lie()) n++;
+	if (command_know.get_to_me()) n++;
+	if (command_know.get_sit()) n++;
+	n++;
+	return n;
 }
