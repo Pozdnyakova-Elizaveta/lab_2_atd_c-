@@ -17,6 +17,10 @@ Look::Look() {
 Look::~Look() {
 
 }
+void Look::display() {
+	cout << "Окрас -" << color << ", цвет глаз - " << eye_color << endl;
+}
+
 void Look::read() {
 	cout << "Какой у нее окрас? ";
 	cin >> color;

@@ -15,13 +15,13 @@ void Sled_dog::read() {
 	Dog::read();
 	ride_character.read();
 }
-void operator<< (ostream& o, Sled_dog d) {
-	cout << d.inf;
-	cout << d.look;
-	cout << d.character;
-	cout << d.command_know;
-	cout << d.needs;
-	d.ride_character.display();
+void Sled_dog::display() {
+	cout << inf;
+	cout << look;
+	cout << character;
+	cout << command_know;
+	cout << needs;
+	ride_character.display();
 }
 void Sled_dog::operator=(Dog a) {
 	this->inf = a.get_inf();

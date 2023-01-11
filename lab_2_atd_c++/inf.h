@@ -14,8 +14,10 @@ public:
 	Inf();
 	~Inf();
 	void read();
+	void display();
 	friend void operator<< (ostream& o, Inf i);
 	string get_name();
+	int get_age();
 	void set_name(string s);
 	void set_age(int a);
 	void set_breed(string s);

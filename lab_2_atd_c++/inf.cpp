@@ -21,7 +21,11 @@ Inf::Inf() {
 Inf::~Inf() {
 
 }
+void Inf::display() {
+	cout << "Ваша собака - " << name << ", порода - " << breed << ", возраст - " << age << endl;
+}
 string Inf::get_name() { return name;}
+int Inf::get_age(){ return age; }
 void Inf::set_name(std::string s){ name = s; }
 void Inf::set_age(int a) { age = a; }
 void Inf::set_breed(string s) { breed = s; }

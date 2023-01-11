@@ -38,6 +38,13 @@ void Dog::read() {
 	look.read();
 	character.read();
 }
+void Dog::display() {
+	cout << inf;
+	cout << look;
+	cout << character;
+	cout << command_know;
+	cout << needs;
+}
 void Dog::set_look(Look look) { this->look = look; }
 void operator<< (ostream& o, Dog d) {
 	cout << d.inf;

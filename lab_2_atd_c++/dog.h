@@ -23,6 +23,7 @@ public:
 	Dog();
 	~Dog();
 	void read();
+	void display();
 	void touch(Dog dog);
 	void eat(Dog *dog);
 	void walk();
